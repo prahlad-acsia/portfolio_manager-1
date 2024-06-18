@@ -14,6 +14,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import DashboardContainer from '../../dashboard/dashboard.container';
 
+import { Navigate } from "react-router-dom";
+
 const pages = ['Dashboard', 'Expense Tracker', 'Upcoming'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -29,7 +31,9 @@ const ResponsiveAppBar=()=> {
   };
 
   const handleCloseNavMenu = () => {
-    <DashboardContainer/>
+    console.log("Clicked");
+    // <DashboardContainer/>
+    <Navigate to="/dashboard" replace={true} />
     setAnchorElNav(null);
   };
 
