@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import DashboardContainer from '../../dashboard/dashboard.container';
 
-import { Navigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const pages = ['Dashboard', 'Expense Tracker', 'Upcoming'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -22,6 +22,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const ResponsiveAppBar=()=> {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+//   const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -33,7 +34,7 @@ const ResponsiveAppBar=()=> {
   const handleCloseNavMenu = () => {
     console.log("Clicked");
     // <DashboardContainer/>
-    <Navigate to="/dashboard" replace={true} />
+    // navigate("/expense-tracker")
     setAnchorElNav(null);
   };
 
@@ -42,10 +43,10 @@ const ResponsiveAppBar=()=> {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor: "white"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -57,11 +58,11 @@ const ResponsiveAppBar=()=> {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.03rem',
-              color: 'inherit',
+              color: '#041DF9',
               textDecoration: 'none',
             }}
           >
-            Portfolio Manager
+            Portfolio Manager 
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -71,7 +72,7 @@ const ResponsiveAppBar=()=> {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="black"
             >
               <MenuIcon />
             </IconButton>
@@ -113,7 +114,7 @@ const ResponsiveAppBar=()=> {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'black',
               textDecoration: 'none',
             }}
           >
@@ -124,7 +125,7 @@ const ResponsiveAppBar=()=> {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page}
               </Button>

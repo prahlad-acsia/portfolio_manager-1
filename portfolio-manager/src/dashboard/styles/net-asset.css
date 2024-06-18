@@ -1,6 +1,18 @@
 .net_assets_main{
-    width: 200px;
+    width: 400px;
     height: 200px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 15px;
+}
+.connected_apps_main{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 15px;
+}
+.graph_main{
+    width: 500px;
+    height: 800px;
+    background-color: white;
+    border-radius: 15px;
 }

@@ -1,6 +1,6 @@
 import './App.css';
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 import NavbarContainer from './navbar/navbar.container';
 import DashboardContainer from './dashboard/dashboard.container';
@@ -15,11 +15,11 @@ function App() {
         {/* <h1>portfoli</h1> */}
         <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashboardContainer/>}>
-          <Route path="dashboard" element={<DashboardContainer />} />
+          <Route path="/" element={<DashboardContainer/>}/>
           <Route path="expense-tracker" element={<ExpensesContainer />} />
+          <Route path="dashboard" element={<DashboardContainer />} />
           {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
+        {/* </Route> */}
       </Routes>
     </BrowserRouter>
       </header>
