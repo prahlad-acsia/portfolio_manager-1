@@ -11,17 +11,12 @@ function App() {
     <div className="App">
       <NavbarContainer/>
       <header className="App-header">
-        
-        {/* <h1>portfoli</h1> */}
-        <BrowserRouter>
       <Routes>
           <Route path="/" element={<DashboardContainer/>}/>
-          <Route path="expense-tracker" element={<ExpensesContainer />} />
-          <Route path="dashboard" element={<DashboardContainer />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        {/* </Route> */}
+          <Route path="Expense" element={<ExpensesContainer />} />
+          <Route path="Dashboard" element={<DashboardContainer />} />
       </Routes>
-    </BrowserRouter>
+
       </header>
     </div>
   );

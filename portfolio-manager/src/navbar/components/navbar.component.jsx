@@ -14,15 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import DashboardContainer from '../../dashboard/dashboard.container';
 
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const pages = ['Dashboard', 'Expense Tracker', 'Upcoming'];
+const pages = ['Dashboard', 'Expense', 'Upcoming'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar=()=> {
+    const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-//   const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -31,10 +31,10 @@ const ResponsiveAppBar=()=> {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    console.log("Clicked");
+  const handleCloseNavMenu = (page) => {
+    console.log("Clicked",page);
     // <DashboardContainer/>
-    // navigate("/expense-tracker")
+    navigate(`/${page}`)
     setAnchorElNav(null);
   };
 
@@ -95,7 +95,7 @@ const ResponsiveAppBar=()=> {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={()=>handleCloseNavMenu(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -124,7 +124,7 @@ const ResponsiveAppBar=()=> {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>handleCloseNavMenu(page)}
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
                 {page}
